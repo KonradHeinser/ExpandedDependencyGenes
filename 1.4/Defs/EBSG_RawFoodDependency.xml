@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <GeneDef Name="EBSG_RawFoodDependencyGene" ParentName="EBSG_DependencyGene" Abstract="True">
+        <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+        <exclusionTags>
+            <li>EBSG_StrongStomachs</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_RawFoodDependency</defName>
+        <label>raw food dependency</label>
+        <description>Carriers of this gene have a biological dependency for raw food, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This dependency will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>raw-food-dependent</labelShortAdj>
+        <displayOrderInCategory>201</displayOrderInCategory>
+        <iconPath>EBSG/Gene_RawFoodDependency</iconPath>
+        <biostatMet>1</biostatMet>
+        <exclusionTags>
+            <li>EBSG_MeatDependency</li>
+            <li>EBSG_VegetarianDependency</li>
+            <li>EBSG_AnimalProductDependency</li>
+            <li>EBSG_RawEggDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupDependency</dependencyHediff>
+                <dependencyLabel>raw food</dependencyLabel>
+                <validCategories>
+                    <li>FoodRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_RawFoodReliance</defName>
+        <label>raw food reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest raw food of any type, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This reliance will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave people very upset about their nature.</description> 
+        <labelShortAdj>raw-food-reliant</labelShortAdj>
+        <displayOrderInCategory>205</displayOrderInCategory>
+        <iconPath>EBSG/Gene_RawFoodDependency</iconPath>
+        <biostatMet>2</biostatMet>
+        <exclusionTags>
+            <li>EBSG_MeatDependency</li>
+            <li>EBSG_VegetarianDependency</li>
+            <li>EBSG_AnimalProductDependency</li>
+            <li>EBSG_RawEggDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupReliance</dependencyHediff>
+                <dependencyLabel>raw food</dependencyLabel>
+                <validCategories>
+                    <li>FoodRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_MeatDependency</defName>
+        <label>meat dependency</label>
+        <description>Carriers of this gene have a biological dependency for raw meat, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This dependency will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>meat-dependent</labelShortAdj>
+        <displayOrderInCategory>210</displayOrderInCategory>
+        <iconPath>EBSG/Gene_MeatDependency</iconPath>
+        <biostatMet>2</biostatMet>
+        <exclusionTags>
+            <li>EBSG_MeatDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupDependency</dependencyHediff>
+                <dependencyLabel>meat</dependencyLabel>
+                <validCategories>
+                    <li>MeatRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_MeatReliance</defName>
+        <label>meat reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest raw meat, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This reliance will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>meat-reliant</labelShortAdj>
+        <displayOrderInCategory>215</displayOrderInCategory>
+        <iconPath>EBSG/Gene_MeatDependency</iconPath>
+        <biostatMet>4</biostatMet>
+        <exclusionTags>
+            <li>EBSG_MeatDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupReliance</dependencyHediff>
+                <dependencyLabel>meat</dependencyLabel>
+                <validCategories>
+                    <li>MeatRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_VegetarianDependency</defName>
+        <label>vegetarian dependency</label>
+        <description>Carriers of this gene have a biological dependency for uncooked plants, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This dependency will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>plant-dependent</labelShortAdj>
+        <displayOrderInCategory>220</displayOrderInCategory>
+        <iconPath>EBSG/Gene_VegetarianDependency</iconPath>
+        <biostatMet>2</biostatMet>
+        <exclusionTags>
+            <li>EBSG_VegetarianDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupDependency</dependencyHediff>
+                <dependencyLabel>plants</dependencyLabel>
+                <validCategories>
+                    <li>PlantFoodRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_VegetarianReliance</defName>
+        <label>vegetarian reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest uncooked plants, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This reliance will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>plant-reliant</labelShortAdj>
+        <displayOrderInCategory>225</displayOrderInCategory>
+        <iconPath>EBSG/Gene_VegetarianDependency</iconPath>
+        <biostatMet>4</biostatMet>
+        <exclusionTags>
+            <li>EBSG_VegetarianDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupReliance</dependencyHediff>
+                <dependencyLabel>plants</dependencyLabel>
+                <validCategories>
+                    <li>PlantFoodRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_AnimalProductDependency</defName>
+        <label>animal product dependency</label>
+        <description>Carriers of this gene have a biological dependency for raw animal products, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This dependency will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>animal-product-dependent</labelShortAdj>
+        <displayOrderInCategory>230</displayOrderInCategory>
+        <iconPath>EBSG/Gene_AnimalProductDependency</iconPath>
+        <biostatMet>3</biostatMet>
+        <exclusionTags>
+            <li>EBSG_AnimalProductDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupDependency</dependencyHediff>
+                <dependencyLabel>animal products</dependencyLabel>
+                <validCategories>
+                    <li>AnimalProductRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_AnimalProductReliance</defName>
+        <label>animal product reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest raw animal products, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This reliance will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>animal-product-reliant</labelShortAdj>
+        <displayOrderInCategory>235</displayOrderInCategory>
+        <iconPath>EBSG/Gene_AnimalProductDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>EBSG_AnimalProductDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupReliance</dependencyHediff>
+                <dependencyLabel>animal products</dependencyLabel>
+                <validCategories>
+                    <li>AnimalProductRaw</li>
+                </validCategories>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_RawEggDependency</defName>
+        <label>raw egg dependency</label>
+        <description>Carriers of this gene have a biological dependency for raw egg, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This dependency will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>raw-egg-dependent</labelShortAdj>
+        <displayOrderInCategory>240</displayOrderInCategory>
+        <iconPath>EBSG/Gene_RawEggDependency</iconPath>
+        <biostatMet>3</biostatMet>
+        <exclusionTags>
+            <li>EBSG_RawEggDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupDependency</dependencyHediff>
+                <dependencyLabel>raw egg</dependencyLabel>
+                <validCategories>
+                    <li>EggsUnfertilized</li>
+                    <li>EggsFertilized</li>
+                </validCategories>
+            </li>
+        </modExtensions>
+    </GeneDef>
+    
+    <GeneDef ParentName="EBSG_RawFoodDependencyGene">
+        <defName>EBSG_RawEggReliance</defName>
+        <label>raw egg reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest raw egg, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.\n\nAs a side effect of this gene, the carrier's digestive system is capable of handling all forms of food poisoning. This reliance will not improve how much nutrition they get from the food though. This gene also won't get rid of the associated thought, which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>raw-egg-reliant</labelShortAdj>
+        <displayOrderInCategory>245</displayOrderInCategory>
+        <iconPath>EBSG/Gene_RawEggDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>EBSG_RawEggDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodGroupReliance</dependencyHediff>
+                <dependencyLabel>raw egg</dependencyLabel>
+                <validCategories>
+                    <li>EggsUnfertilized</li>
+                    <li>EggsFertilized</li>
+                </validCategories>
+            </li>
+        </modExtensions>
+    </GeneDef>
+</Defs>
