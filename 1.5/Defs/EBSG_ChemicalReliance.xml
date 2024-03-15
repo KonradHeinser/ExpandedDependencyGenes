@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <GeneCategoryDef>
+        <defName>EBSG_Dependency</defName>
+        <label>Expanded Dependency Genes</label>
+        <displayPriorityInXenotype>5</displayPriorityInXenotype>
+    </GeneCategoryDef>
+    <!--Display order 1~100 is for drugs, and any number beyond that is for food stuffs-->
+    
+    <GeneDef Name="EBSG_DependencyGene" Abstract="True">
+        <geneClass>EBSGFramework.Gene_Dependency</geneClass>
+        <displayCategory>EBSG_Dependency</displayCategory>
+        <minAgeActive>13</minAgeActive>
+    </GeneDef>
+
+    <GeneDef Name="EBSG_ChemicalReliance" ParentName="EBSG_DependencyGene" Abstract="True">
+        <description>Carriers of this gene have an overwhelming need to ingest this chemical, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.</description> 
+        <addictionChanceFactor>0</addictionChanceFactor>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>8</biostatMet>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticDrugReliance</dependencyHediff>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <!--Drugs-->
+    <GeneDef ParentName="EBSG_ChemicalReliance">
+        <defName>EBSG_WakeUpReliance</defName>
+        <label>wake-up reliance</label>
+        <labelShortAdj>wake-up-reliant</labelShortAdj>
+        <displayOrderInCategory>6</displayOrderInCategory>
+        <chemical>WakeUp</chemical>
+        <iconPath>UI/Icons/Genes/Chemicals/WakeUp/ChemicalDependency</iconPath>
+        <exclusionTags>
+            <li>Addiction_WakeUp</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_ChemicalReliance">
+        <defName>EBSG_PsychiteReliance</defName>
+        <label>psychite reliance</label>
+        <labelShortAdj>psychite-reliant</labelShortAdj>
+        <displayOrderInCategory>4</displayOrderInCategory>
+        <chemical>Psychite</chemical>
+        <iconPath>UI/Icons/Genes/Chemicals/Psychite/ChemicalDependency</iconPath>
+        <exclusionTags>
+            <li>Addiction_Psychite</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_ChemicalReliance">
+        <defName>EBSG_GoJuiceReliance</defName>
+        <label>go-juice reliance</label>
+        <labelShortAdj>go-juice-reliant</labelShortAdj>
+        <displayOrderInCategory>3</displayOrderInCategory>
+        <chemical>GoJuice</chemical>
+        <iconPath>UI/Icons/Genes/Chemicals/GoJuice/ChemicalDependency</iconPath>
+        <exclusionTags>
+            <li>Addiction_GoJuice</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_ChemicalReliance">
+        <defName>EBSG_SmokeleafReliance</defName>
+        <label>smokeleaf reliance</label>
+        <labelShortAdj>smokeleaf-reliant</labelShortAdj>
+        <displayOrderInCategory>5</displayOrderInCategory>
+        <chemical>Smokeleaf</chemical>
+        <iconPath>UI/Icons/Genes/Chemicals/Smokeleaf/ChemicalDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>Addiction_Smokeleaf</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_ChemicalReliance">
+        <defName>EBSG_AlcoholReliance</defName>
+        <label>alcohol reliance</label>
+        <labelShortAdj>alcohol-reliant</labelShortAdj>
+        <displayOrderInCategory>1</displayOrderInCategory>
+        <chemical>Alcohol</chemical>
+        <iconPath>UI/Icons/Genes/Chemicals/Alcohol/ChemicalDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>Addiction_Alcohol</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!--Only applicable if the More Biotech Style Gene variants are around. The MBSG.AiO is in case I update the ID later to follow my pattern-->
+    <GeneDef ParentName="EBSG_ChemicalReliance" MayRequireAnyOf="MoreBiotechStyleGenes.Mod, MBSG.Drug, MBSG.AiO">
+        <defName>EBSG_AmbrosiaReliance</defName>
+        <label>ambrosia reliance</label>
+        <labelShortAdj>ambrosia-reliant</labelShortAdj>
+        <displayOrderInCategory>2</displayOrderInCategory>
+        <chemical>Ambrosia</chemical>
+        <iconPath>UI/Icons/Genes/Chemicals/Ambrosia/ChemicalDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>Addiction_Ambrosia</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!--Specific ingestibles-->
+    <GeneDef ParentName="EBSG_DependencyGene">
+        <defName>EBSG_ChocolateDependency</defName>
+        <label>chocolate dependency</label>
+        <description>Carriers of this gene have a biological dependency on chocolate, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.</description> 
+        <labelShortAdj>chocolate-dependent</labelShortAdj>
+        <displayOrderInCategory>101</displayOrderInCategory>
+        <iconPath>EBSG/Gene_ChocolateDependency</iconPath>
+        <biostatMet>3</biostatMet>
+        <exclusionTags>
+            <li>EBSG_ChocolateDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodDependency</dependencyHediff>
+                <dependencyLabel>chocolate</dependencyLabel>
+                <validThings>
+                    <li>Chocolate</li>
+                </validThings>
+                <checkIngredients>True</checkIngredients>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_DependencyGene">
+        <defName>EBSG_ChocolateReliance</defName>
+        <label>chocolate reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest chocolate, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.</description> 
+        <labelShortAdj>chocolate-reliant</labelShortAdj>
+        <displayOrderInCategory>102</displayOrderInCategory>
+        <iconPath>EBSG/Gene_ChocolateDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>EBSG_ChocolateDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodReliance</dependencyHediff>
+                <dependencyLabel>chocolate</dependencyLabel>
+                <validThings>
+                    <li>Chocolate</li>
+                </validThings>
+                <checkIngredients>True</checkIngredients>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_DependencyGene">
+        <defName>EBSG_HumanMeatDependency</defName>
+        <label>human meat dependency</label>
+        <description>Carriers of this gene have a biological dependency on human meat, requiring frequent consumption to survive. After 5 days without consumption, carriers will suffer from deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.\n\nThis gene won't get rid of the associated thought(s), which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>human-meat-dependent</labelShortAdj>
+        <displayOrderInCategory>111</displayOrderInCategory>
+        <iconPath>EBSG/Gene_HumanMeatDependency</iconPath>
+        <biostatMet>3</biostatMet>
+        <exclusionTags>
+            <li>EBSG_HumanMeatDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodDependency</dependencyHediff>
+                <dependencyLabel>human meat</dependencyLabel>
+                <validThings>
+                    <li>Meat_Human</li>
+                </validThings>
+                <checkIngredients>True</checkIngredients>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="EBSG_DependencyGene">
+        <defName>EBSG_HumanMeatReliance</defName>
+        <label>human meat reliance</label>
+        <description>Carriers of this gene have an overwhelming need to ingest human meat, requiring frequent consumption to survive. After 2.5 days without consumption, carriers will suffer from deficiency. After 15 days, they will fall into a coma. After 30 days, they will die.\n\nThis gene won't get rid of the associated thought(s), which can leave pawns very upset about their nature.</description> 
+        <labelShortAdj>human-meat-reliant</labelShortAdj>
+        <displayOrderInCategory>112</displayOrderInCategory>
+        <iconPath>EBSG/Gene_HumanMeatDependency</iconPath>
+        <biostatMet>6</biostatMet>
+        <exclusionTags>
+            <li>EBSG_HumanMeatDependency</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="EBSGFramework.IDGExtension">
+                <dependencyHediff>EBSG_GeneticFoodReliance</dependencyHediff>
+                <dependencyLabel>human meat</dependencyLabel>
+                <validThings>
+                    <li>Meat_Human</li>
+                </validThings>
+                <checkIngredients>True</checkIngredients>
+            </li>
+	    </modExtensions>
+    </GeneDef>
+</Defs>
