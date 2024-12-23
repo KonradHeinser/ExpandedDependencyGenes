@@ -89,7 +89,7 @@
     </GeneDef>
 
     <!--Only applicable if the More Biotech Style Gene variants are around. The MBSG.AiO is in case I update the ID later to follow my pattern-->
-    <GeneDef ParentName="EBSG_ChemicalReliance" MayRequireAnyOf="MoreBiotechStyleGenes.Mod, MBSG.Drug, MBSG.AiO">
+    <GeneDef ParentName="EBSG_ChemicalReliance" MayRequireAnyOf="MoreBiotechStyleGenes.Mod,MBSG.Drug,MBSG.AiO">
         <defName>EBSG_AmbrosiaReliance</defName>
         <label>ambrosia reliance</label>
         <labelShortAdj>ambrosia-reliant</labelShortAdj>
