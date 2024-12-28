@@ -27,6 +27,9 @@
                 <dependencyLabel>raw food</dependencyLabel>
                 <validCategories>
                     <li>FoodRaw</li>
+                    <li>PlantFoodRaw</li>
+                    <li>AnimalProductRaw</li>
+                    <li>MeatRaw</li>
                 </validCategories>
             </li>
 	    </modExtensions>
@@ -52,6 +55,9 @@
                 <dependencyLabel>raw food</dependencyLabel>
                 <validCategories>
                     <li>FoodRaw</li>
+                    <li>PlantFoodRaw</li>
+                    <li>AnimalProductRaw</li>
+                    <li>MeatRaw</li>
                 </validCategories>
             </li>
 	    </modExtensions>
