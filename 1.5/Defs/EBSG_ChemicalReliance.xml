@@ -166,6 +166,7 @@
                 <dependencyLabel>human meat</dependencyLabel>
                 <validThings>
                     <li>Meat_Human</li>
+                    <li>Corpse_Human</li>
                 </validThings>
                 <checkIngredients>True</checkIngredients>
             </li>
@@ -189,6 +190,7 @@
                 <dependencyLabel>human meat</dependencyLabel>
                 <validThings>
                     <li>Meat_Human</li>
+                    <li>Corpse_Human</li>
                 </validThings>
                 <checkIngredients>True</checkIngredients>
             </li>
